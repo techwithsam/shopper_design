@@ -24,7 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextField(
-                  readOnly: true,
+                  readOnly: true, 
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     isDense: true,

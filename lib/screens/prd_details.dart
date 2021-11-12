@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopper_design/model/product_model.dart';
 import 'package:shopper_design/utils/styles.dart';
 
+import 'cart_page.dart';
+
 class ProductDetails extends StatefulWidget {
   final int index;
   const ProductDetails({Key? key, required this.index}) : super(key: key);
@@ -124,7 +126,13 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
               const SizedBox(height: 20),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const CardPage(),
+                    ),
+                  );
+                },
                 elevation: 0,
                 minWidth: double.infinity,
                 height: 65,

@@ -10,6 +10,6 @@ class FavouritePage extends StatefulWidget {
 class _FavouritePageState extends State<FavouritePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(child: Text('Favourite screen'));
   }
 }
