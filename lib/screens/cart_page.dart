@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shopper_design/utils/styles.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({Key? key}) : super(key: key);

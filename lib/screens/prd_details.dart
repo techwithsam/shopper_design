@@ -18,13 +18,42 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(backgroundColor: Colors.transparent),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+        child: MaterialButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const CardPage(),
+              ),
+            );
+          },
+          elevation: 0,
+          minWidth: double.infinity,
+          height: 65,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          color: Colors.black,
+          child: const Text(
+            'Buy Now',
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               Center(
                 child: Container(
                   height: 380,
@@ -123,31 +152,6 @@ class _ProductDetailsState extends State<ProductDetails> {
               Text(
                 productItems[widget.index].description,
                 style: style2,
-              ),
-              const SizedBox(height: 20),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => const CardPage(),
-                    ),
-                  );
-                },
-                elevation: 0,
-                minWidth: double.infinity,
-                height: 65,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                color: Colors.black,
-                child: const Text(
-                  'Buy Now',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
               ),
               const SizedBox(height: 20),
             ],
