@@ -24,7 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextField(
-                  readOnly: true, 
+                  readOnly: true,
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     isDense: true,
@@ -36,6 +36,11 @@ class _DashboardPageState extends State<DashboardPage> {
                     prefixIcon:
                         const Icon(Icons.search, size: 26, color: Colors.grey),
                     enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                      borderSide:
+                          const BorderSide(color: Colors.grey, width: 1.3),
+                    ),
+                    border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(40),
                       borderSide:
                           const BorderSide(color: Colors.grey, width: 1.3),
@@ -164,7 +169,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         );
                       },
                       child: Container(
-                        height: 120,
+                        // height: 120,
                         padding: const EdgeInsets.all(10),
                         margin: const EdgeInsets.only(bottom: 12),
                         decoration: BoxDecoration(

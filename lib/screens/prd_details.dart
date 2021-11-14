@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopper_design/model/product_model.dart';
 import 'package:shopper_design/utils/styles.dart';
-
 import 'cart_page.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -14,6 +13,13 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int _quantity = 1;
+  late double price;
+
+  @override
+  void initState() {
+    super.initState();
+    price = productItems[widget.index].price;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +43,9 @@ class _ProductDetailsState extends State<ProductDetails> {
             borderRadius: BorderRadius.circular(12),
           ),
           color: Colors.black,
-          child: const Text(
-            'Buy Now',
-            style: TextStyle(
+          child: Text(
+            'Buy Now - \$$price',
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.white,
               fontWeight: FontWeight.w600,
@@ -121,6 +127,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               _quantity = 1;
                             } else {
                               _quantity -= 1;
+                                price -= productItems[widget.index].price;
                             }
                           });
                         },
@@ -136,6 +143,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         onTap: () {
                           setState(() {
                             _quantity += 1;
+                            price += productItems[widget.index].price;
                           });
                         },
                         child: drawCont('+'),
