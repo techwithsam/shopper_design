@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopper_design/model/product_model.dart';
 import 'package:shopper_design/utils/styles.dart';
+import 'package:shopper_design/widgets/btn_widget.dart';
 import 'cart_page.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -27,8 +28,8 @@ class _ProductDetailsState extends State<ProductDetails> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(backgroundColor: Colors.transparent),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
-        child: MaterialButton(
+        padding: const EdgeInsets.fromLTRB(13, 0, 13, 10),
+        child: ButtonWidget(
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -36,21 +37,8 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             );
           },
-          elevation: 0,
-          minWidth: double.infinity,
-          height: 65,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          color: Colors.black,
-          child: Text(
-            'Buy Now - \$$price',
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+          height: 73,
+          text: 'Buy Now - \$$price',
         ),
       ),
       body: Padding(
@@ -127,7 +115,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               _quantity = 1;
                             } else {
                               _quantity -= 1;
-                                price -= productItems[widget.index].price;
+                              price -= productItems[widget.index].price;
                             }
                           });
                         },

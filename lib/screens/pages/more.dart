@@ -10,6 +10,6 @@ class MorePage extends StatefulWidget {
 class _MorePageState extends State<MorePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(child: Text('More screen'));
   }
 }

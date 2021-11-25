@@ -8,7 +8,6 @@
 
 - Design by: [Taras Migulko](https://dribbble.com/ui_migulko) --> [Design link](https://dribbble.com/shots/16067151-The-Shopper-mobile-app-design)
 
-
 ## Shopper App Final UI
 
 ![App UI](/i.jpg)

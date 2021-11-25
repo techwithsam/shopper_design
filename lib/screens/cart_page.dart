@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopper_design/utils/styles.dart';
+import 'package:shopper_design/widgets/btn_widget.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({Key? key}) : super(key: key);
@@ -16,23 +17,9 @@ class _CardPageState extends State<CardPage> {
       appBar: AppBar(),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
-        child: MaterialButton(
+        child: ButtonWidget(
           onPressed: () {},
-          elevation: 0,
-          minWidth: double.infinity,
-          height: 65,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          color: Colors.black,
-          child: const Text(
-            'Checkout',
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+          text: 'Checkout',
         ),
       ),
       body: Padding(
@@ -98,7 +85,7 @@ class _CardPageState extends State<CardPage> {
                   text: 'Total Order\n',
                   style: GoogleFonts.rubik(
                     color: Colors.grey,
-                    fontSize: 20, 
+                    fontSize: 20,
                     fontWeight: FontWeight.w700,
                   ),
                   children: [
